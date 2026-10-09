@@ -1,8 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Meta Pixel Code -->
-  <script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepak Wadhwa Official™ | Market Analytics & Educational Frameworks</title>
+    
+    <!-- Fonts & Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Meta Pixel Code (NEW PIXEL) -->
+    <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -11,384 +20,739 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1098847662532697');
+    fbq('init', '1792459368731810');
     fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1098847662532697&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1792459368731810&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pankaj Bhardwaj</title>
+    <style>
+        :root {
+            --bg-dark: #070a0f;
+            --card-bg: rgba(13, 20, 28, 0.85);
+            --card-border: rgba(212, 175, 55, 0.2);
+            --accent-gold: #d4af37;
+            --accent-gold-bright: #ffd700;
+            --accent-gold-glow: rgba(212, 175, 55, 0.25);
+            --accent-emerald: #10b981;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7fb;
-      color: #111827;
-    }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px 14px;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.16) 0%, transparent 65%),
+                radial-gradient(circle at 100% 100%, rgba(13, 59, 46, 0.28) 0%, transparent 50%),
+                radial-gradient(circle at 0% 50%, rgba(16, 185, 129, 0.08) 0%, transparent 45%);
+            background-attachment: fixed;
+            -webkit-font-smoothing: antialiased;
+        }
 
-    .page {
-      width: 100%;
-      max-width: 700px;
-      margin: auto;
-      padding: 20px 15px 18px;
-    }
+        /* Container Animation */
+        .container {
+            width: 100%;
+            max-width: 440px;
+            background: var(--card-bg);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--card-border);
+            border-radius: 28px;
+            padding: 28px 20px;
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.85), 0 0 35px rgba(212, 175, 55, 0.06);
+            position: relative;
+            overflow: hidden;
+            animation: cardEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
 
-    /* TOP */
-    .top {
-      text-align: center;
-    }
+        @keyframes cardEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(22px) scale(0.98);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
 
-    .online {
-      display: inline-block;
-      background: #e7f9ed;
-      color: #249653;
-      padding: 9px 18px;
-      border-radius: 30px;
-      font-size: 15px;
-      font-weight: bold;
-      margin-bottom: 16px;
-    }
+        /* Top Gold Shimmer Bar */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold-bright), var(--accent-gold), transparent);
+            animation: topGlow 4s linear infinite;
+        }
 
-    .online::before {
-      content: "●";
-      color: #22c55e;
-      margin-right: 8px;
-    }
+        @keyframes topGlow {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(50%); }
+        }
 
-    /* PROFILE PHOTO */
-    .profile {
-      width: 135px;
-      height: 135px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid white;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, .15);
-      display: block;
-      margin: 0 auto 15px;
-    }
+        /* Live Status Pill */
+        .status-badge {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            animation: fadeInDown 0.6s ease both;
+        }
 
-    /* TITLE */
-    .title {
-      font-size: 29px;
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 7px;
-    }
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.28);
+            color: var(--accent-gold-bright);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 600;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+        }
 
-    .subtitle {
-      color: #1769c2;
-      font-size: 17px;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
+        .pulse-dot {
+            width: 7px;
+            height: 7px;
+            background-color: var(--accent-gold-bright);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-gold-bright);
+            animation: pulse 1.8s infinite;
+        }
 
-    .stars {
-      color: #f59e0b;
-      font-size: 25px;
-      letter-spacing: 2px;
-    }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(1.25); }
+        }
 
-    .reviews {
-      color: #777;
-      font-size: 15px;
-      margin-top: 5px;
-      margin-bottom: 20px;
-    }
+        /* Profile */
+        .profile {
+            text-align: center;
+            margin-bottom: 22px;
+            animation: fadeInUp 0.7s ease both 0.1s;
+        }
 
-    /* MAIN TELEGRAM BUTTON */
-    .telegram-btn {
-      display: block;
-      width: 100%;
-      text-decoration: none;
-      background: linear-gradient(135deg, #087df5, #0759d8);
-      color: white;
-      text-align: center;
-      padding: 21px 15px;
-      border-radius: 15px;
-      font-size: 20px;
-      font-weight: bold;
-      margin: 0 auto 20px;
-      box-shadow: 0 5px 15px rgba(0, 100, 255, .20);
-      transition: transform 0.1s ease;
-    }
+        .avatar-wrap {
+            position: relative;
+            width: 88px;
+            height: 88px;
+            margin: 0 auto 14px auto;
+            transition: transform 0.3s ease;
+        }
 
-    .telegram-btn:active {
-      transform: scale(.98);
-    }
+        .avatar-wrap:hover {
+            transform: scale(1.05);
+        }
 
-    /* STATS */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-bottom: 22px;
-    }
+        .avatar-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--accent-gold);
+            padding: 2px;
+            background: var(--bg-dark);
+            box-shadow: 0 0 24px rgba(212, 175, 55, 0.28);
+        }
 
-    .stat {
-      background: white;
-      border-radius: 14px;
-      padding: 15px 5px;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
-    }
+        .badge-verified {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            background: linear-gradient(135deg, var(--accent-gold-bright), var(--accent-gold));
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--bg-dark);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+            animation: badgeBounce 2.5s infinite ease-in-out;
+        }
 
-    .stat strong {
-      display: block;
-      color: #0868cf;
-      font-size: 25px;
-      margin-bottom: 4px;
-    }
+        @keyframes badgeBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+        }
 
-    .stat span {
-      font-size: 14px;
-    }
+        .badge-verified svg {
+            width: 12px;
+            height: 12px;
+            fill: #000000;
+        }
 
-    /* HEADING */
-    .main-heading {
-      text-align: center;
-      font-size: 21px;
-      line-height: 1.35;
-      margin-bottom: 7px;
-    }
+        .profile h1 {
+            font-size: 21px;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: -0.3px;
+            background: linear-gradient(180deg, #ffffff 30%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    .blue {
-      color: #0868cf;
-    }
+        .profile p {
+            font-size: 12px;
+            color: var(--accent-gold);
+            margin-top: 4px;
+            font-weight: 600;
+        }
 
-    .description {
-      text-align: center;
-      color: #777;
-      font-size: 15px;
-      margin-bottom: 18px;
-    }
+        /* CTA Button & Pulse Effect */
+        .cta-btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            background: linear-gradient(135deg, #d4af37 0%, #b8860b 50%, #8b6508 100%);
+            color: #000000;
+            font-weight: 800;
+            font-size: 14px;
+            padding: 16px;
+            border-radius: 16px;
+            text-decoration: none;
+            box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.42), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 215, 0, 0.6);
+            margin-bottom: 18px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+            animation: ctaBreath 3s infinite ease-in-out;
+        }
 
-    /* LIMITED ACCESS */
-    .limited {
-      background: #fff2dc;
-      color: #e77817;
-      text-align: center;
-      padding: 13px 8px;
-      border-radius: 25px;
-      font-size: 15px;
-      font-weight: bold;
-      margin-bottom: 18px;
-    }
+        @keyframes ctaBreath {
+            0%, 100% {
+                box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.42);
+                transform: translateY(0);
+            }
+            50% {
+                box-shadow: 0 15px 30px -4px rgba(212, 175, 55, 0.65);
+                transform: translateY(-2px);
+            }
+        }
 
-    /* FEATURES */
-    .feature {
-      background: white;
-      border-radius: 14px;
-      padding: 17px 15px;
-      margin-bottom: 9px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      box-shadow: 0 2px 9px rgba(0, 0, 0, .06);
-    }
+        /* Light Shimmer Across CTA */
+        .cta-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 80%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transform: skewX(-22deg);
+            animation: shimmerSlide 3.2s infinite;
+        }
 
-    .icon {
-      font-size: 27px;
-      width: 35px;
-      text-align: center;
-    }
+        @keyframes shimmerSlide {
+            0% { left: -120%; }
+            35%, 100% { left: 140%; }
+        }
 
-    .feature-text {
-      font-size: 16px;
-    }
+        .cta-btn:hover {
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 16px 32px -4px rgba(212, 175, 55, 0.65);
+        }
 
-    .feature-text strong {
-      display: block;
-    }
+        .cta-btn:active {
+            transform: scale(0.98);
+        }
 
-    /* ADS MANAGER BUTTON */
-    .agency-btn {
-      display: block;
-      width: 70%;
-      margin: 16px auto 0;
-      text-decoration: none;
-      background: linear-gradient(135deg, #087df5, #0759d8);
-      color: white;
-      text-align: center;
-      padding: 11px 8px;
-      border-radius: 10px;
-      font-size: 13px;
-      font-weight: bold;
-      box-shadow: 0 3px 10px rgba(0, 100, 255, .18);
-      transition: transform 0.1s ease;
-    }
+        .cta-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: #000000;
+            transition: transform 0.3s ease;
+        }
 
-    .agency-btn:active {
-      transform: scale(.98);
-    }
+        .cta-btn:hover svg {
+            transform: translateX(3px) scale(1.08);
+        }
 
-    .agency-small {
-      display: block;
-      font-size: 9px;
-      font-weight: normal;
-      margin-top: 3px;
-      opacity: .95;
-    }
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 18px;
+            animation: fadeInUp 0.7s ease both 0.2s;
+        }
 
-    /* DISCLAIMER */
-    .disclaimer {
-      text-align: center;
-      color: #999;
-      font-size: 11px;
-      line-height: 1.5;
-      margin: 15px 15px 0;
-    }
+        .stat-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 12px 6px;
+            text-align: center;
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
 
-    .disclaimer strong {
-      display: block;
-      font-size: 13px;
-      color: #888;
-      margin-bottom: 3px;
-    }
+        .stat-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(212, 175, 55, 0.45);
+        }
 
-    /* MOBILE */
-    @media(max-width:400px) {
-      .page {
-        padding: 18px 12px;
-      }
-      .title {
-        font-size: 25px;
-      }
-      .subtitle {
-        font-size: 16px;
-      }
-      .telegram-btn {
-        font-size: 17px;
-        padding: 19px 10px;
-      }
-      .stat strong {
-        font-size: 22px;
-      }
-      .feature-text {
-        font-size: 15px;
-      }
-      .agency-btn {
-        width: 65%;
-        font-size: 12px;
-        padding: 10px 6px;
-      }
-      .agency-small {
-        font-size: 8px;
-      }
-    }
-  </style>
+        .stat-val {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .stat-val.accent {
+            color: var(--accent-gold-bright);
+        }
+
+        .stat-lbl {
+            font-size: 9px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 3px;
+        }
+
+        .compliance-note {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px dashed rgba(212, 175, 55, 0.25);
+            border-radius: 12px;
+            padding: 10px 12px;
+            font-size: 10px;
+            color: var(--text-muted);
+            line-height: 1.4;
+            text-align: center;
+            margin-bottom: 18px;
+            animation: fadeInUp 0.7s ease both 0.25s;
+        }
+
+        /* Feature List */
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 12px 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.25s ease;
+            animation: fadeInUp 0.6s ease both;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.3s; }
+        .feature-card:nth-child(2) { animation-delay: 0.4s; }
+        .feature-card:nth-child(3) { animation-delay: 0.5s; }
+
+        .feature-card:hover {
+            transform: translateX(4px);
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+
+        .icon-box {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: var(--accent-gold-glow);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: transform 0.25s ease;
+        }
+
+        .feature-card:hover .icon-box {
+            transform: scale(1.1);
+        }
+
+        .icon-box svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--accent-gold-bright);
+        }
+
+        .feature-details h2 {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .feature-details p {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 16px;
+            border-top: 1px solid var(--card-border);
+            padding-top: 16px;
+            animation: fadeInUp 0.7s ease both 0.55s;
+        }
+
+        .community-tag {
+            font-size: 11px;
+            color: var(--accent-gold);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .footer-nav button {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 2px 4px;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .footer-nav button:hover {
+            color: var(--accent-gold-bright);
+            transform: translateY(-1px);
+        }
+
+        .dot {
+            color: rgba(212, 175, 55, 0.3);
+            font-size: 9px;
+        }
+
+        .copyright {
+            font-size: 9px;
+            color: rgba(255, 255, 255, 0.3);
+            line-height: 1.4;
+        }
+
+        /* Generic Keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Modal Overlay & Transitions */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.88);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.25s ease, visibility 0.25s ease;
+            padding: 16px;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-box {
+            background: #0d141e;
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            width: 100%;
+            max-width: 400px;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 30px rgba(212, 175, 55, 0.12);
+            transform: scale(0.92) translateY(10px);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .modal-overlay.active .modal-box {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 18px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .modal-header h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent-gold-bright);
+        }
+
+        .close-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: none;
+            color: var(--text-muted);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.18);
+            color: #ffffff;
+        }
+
+        .modal-body {
+            padding: 18px;
+            overflow-y: auto;
+            color: var(--text-muted);
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+        .modal-body h4 {
+            color: var(--accent-gold);
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 12px;
+        }
+    </style>
 </head>
-
 <body>
 
-  <div class="page">
+    <main class="container">
+        <!-- Live Status Bar -->
+        <div class="status-badge">
+            <div class="status-pill">
+                <span class="pulse-dot"></span>
+                Educational Access Active
+            </div>
+        </div>
 
-    <!-- TOP SECTION -->
-    <div class="top">
-      <div class="online">5,947 Traders Online Now</div>
-      <img src="https://karanmetalabe.com/wp-content/uploads/2026/08/images-21.jpg" class="profile" alt="Profile">
-      <h1 class="title">Pankaj Bhardwaj</h1>
-      <div class="subtitle">🏆 India's No.1 Stock Market Channel</div>
-      <div class="stars">★★★★★</div>
-      <div class="reviews">4.9/5 (2340 Reviews)</div>
+        <!-- Profile Section (Logo from your URL) -->
+        <header class="profile">
+            <div class="avatar-wrap">
+                <img src="https://karanmetalabe.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-10-14-at-12.14.49_fd910fb7.jpg" alt="Deepak Wadhwa Official™" fetchpriority="high" width="88" height="88">
+                <div class="badge-verified">
+                    <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                </div>
+            </div>
+            <h1>Deepak Wadhwa Official<sup>™</sup></h1>
+            <p>Financial Market Analyst & Strategy Educator</p>
+        </header>
+
+        <!-- Primary CTA (NEW LINK + EVENT TRACKING) -->
+        <a href="https://t.me/+8OZNLVBobv8wNWE1" target="_blank" rel="noopener" class="cta-btn" onclick="trackLead()">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.35-.49.96-.75 3.78-1.65 6.31-2.74 7.58-3.27 3.61-1.51 4.36-1.77 4.85-1.78.11 0 .35.03.5.15.13.11.17.26.19.37.02.11.03.35.01.54z"/></svg>
+            Join Telegram Channel
+        </a>
+
+        <!-- Stats Grid -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-val">Daily</div>
+                <div class="stat-lbl">Market Study</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val accent">Real-Time</div>
+                <div class="stat-lbl">Chart Updates</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val">100%</div>
+                <div class="stat-lbl">Educational</div>
+            </div>
+        </section>
+
+        <!-- Compliance Notice -->
+        <div class="compliance-note">
+            💡 Free educational community sharing technical case studies & market structure breakdowns. No financial advisory or guaranteed returns.
+        </div>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="feature-card">
+                <div class="icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+                </div>
+                <div class="feature-details">
+                    <h2>Market Breakdowns</h2>
+                    <p>Daily structural insights & trend analysis</p>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                </div>
+                <div class="feature-details">
+                    <h2>Chart Updates</h2>
+                    <p>Real-time technical analysis & levels</p>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <div class="feature-details">
+                    <h2>Risk Management</h2>
+                    <p>Disciplined frameworks for capital protection</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secondary CTA (NEW LINK + EVENT TRACKING) -->
+        <a href="https://t.me/+8OZNLVBobv8wNWE1" target="_blank" rel="noopener" class="cta-btn" onclick="trackLead()">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.35-.49.96-.75 3.78-1.65 6.31-2.74 7.58-3.27 3.61-1.51 4.36-1.77 4.85-1.78.11 0 .35.03.5.15.13.11.17.26.19.37.02.11.03.35.01.54z"/></svg>
+            Access Community Channel
+        </a>
+
+        <!-- Footer -->
+        <footer>
+            <p class="community-tag">⚡ Educational Community For Modern Traders</p>
+            <nav class="footer-nav">
+                <button type="button" onclick="openModal('about')">About Us</button>
+                <span class="dot">•</span>
+                <button type="button" onclick="openModal('terms')">Terms</button>
+                <span class="dot">•</span>
+                <button type="button" onclick="openModal('disclaimer')">Disclaimer</button>
+                <span class="dot">•</span>
+                <button type="button" onclick="openModal('contact')">Contact</button>
+            </nav>
+            <p class="copyright">© 2026 Deepak Wadhwa Official™. All rights reserved.<br>Not affiliated with Meta Platforms, Inc. or SEBI.</p>
+        </footer>
+    </main>
+
+    <!-- Modal Container -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeOnBg(event)" aria-hidden="true">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="modalTitle">Information</h3>
+                <button type="button" class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalContent"></div>
+        </div>
     </div>
 
-    <!-- CLIENT BUTTON 1 (with event tracking) -->
-    <a href="https://t.me/+GX46a3M5WmEyZTI1"
-       class="telegram-btn"
-       target="_blank"
-       onclick="fbq('track', 'JoinTelegram');">
-      Join Free Telegram Channel →
-    </a>
+    <!-- Scripts -->
+    <script>
+        const contentMap = {
+            about: {
+                title: "About Us",
+                body: "<p>Welcome to <strong>Deepak Wadhwa Official<sup>™</sup></strong>.</p><br><p>We provide structural market analysis, technical chart breakdowns, and risk management concepts designed strictly for learning and educational purposes.</p>"
+            },
+            terms: {
+                title: "Terms & Conditions",
+                body: "<h4>1. Educational Purpose Only</h4><p>All content shared on our platforms is for informational and educational purposes only. Nothing constitutes financial advice.</p><h4>2. Risk Acknowledgment</h4><p>Trading in financial markets carries inherent risks. Users are solely responsible for their financial decisions and outcomes.</p>"
+            },
+            disclaimer: {
+                title: "Disclaimer & Regulatory Notice",
+                body: "<h4>Financial Warning</h4><p>Participation in financial markets involves substantial risk of capital loss.</p><h4>Non-Advisory Declaration</h4><p>Deepak Wadhwa Official™ is not a SEBI-registered advisory entity. We do not provide buy/sell recommendations or portfolio management services. Consult a certified financial advisor before trading.</p>"
+            },
+            contact: {
+                title: "Contact Support",
+                body: "<p>For business inquiries or assistance, reach out to us:</p><br><p><strong>Email:</strong> support@deepakwadhwaofficial.com</p><p><strong>Telegram:</strong> Via official support channel</p>"
+            }
+        };
 
-    <!-- STATS -->
-    <div class="stats">
-      <div class="stat">
-        <strong>50K+</strong>
-        <span>Members</span>
-      </div>
-      <div class="stat">
-        <strong>5+</strong>
-        <span>Years</span>
-      </div>
-      <div class="stat">
-        <strong>95%</strong>
-        <span>Accuracy</span>
-      </div>
-    </div>
+        function openModal(type) {
+            const data = contentMap[type];
+            if (data) {
+                document.getElementById('modalTitle').innerText = data.title;
+                document.getElementById('modalContent').innerHTML = data.body;
+                const overlay = document.getElementById('modalOverlay');
+                overlay.classList.add('active');
+                overlay.setAttribute('aria-hidden', 'false');
+            }
+        }
 
-    <!-- MAIN CONTENT -->
-    <h2 class="main-heading">
-      Get <span class="blue">FREE Daily Calls</span><br>
-      for NIFTY, BANKNIFTY & SENSEX
-    </h2>
+        function closeModal() {
+            const overlay = document.getElementById('modalOverlay');
+            overlay.classList.remove('active');
+            overlay.setAttribute('aria-hidden', 'true');
+        }
 
-    <p class="description">
-      Join thousands of traders getting daily market analysis
-    </p>
+        function closeOnBg(e) {
+            if (e.target.id === 'modalOverlay') closeModal();
+        }
 
-    <div class="limited">
-      🔥 Limited FREE Access Available
-    </div>
-
-    <!-- FEATURES -->
-    <div class="feature">
-      <div class="icon">📊</div>
-      <div class="feature-text">
-        <strong>Daily Nifty & BankNifty Levels</strong>
-      </div>
-    </div>
-
-    <div class="feature">
-      <div class="icon">🎓</div>
-      <div class="feature-text">
-        <strong>Educational Market Analysis</strong>
-      </div>
-    </div>
-
-    <div class="feature">
-      <div class="icon">👥</div>
-      <div class="feature-text">
-        <strong>50,000+ Subscribers Community</strong>
-      </div>
-    </div>
-
-    <!-- CLIENT BUTTON 2 (with event tracking) -->
-    <a href="https://t.me/+GX46a3M5WmEyZTI1"
-       class="telegram-btn"
-       target="_blank"
-       onclick="fbq('track', 'JoinTelegram');">
-      Join Free Telegram Channel →
-    </a>
-
-    <!-- ADS MANAGER (KARAN AD AGENCY) -->
-    <a href="https://t.me/+nTRMAouerik1ZGY1"
-       class="agency-btn"
-       target="_blank">
-      📢 Ads Manager by Karan Ad Agency →
-      <span class="agency-small">
-        Telegram Promotion & Advertising
-      </span>
-    </a>
-
-    <!-- DISCLAIMER -->
-    <div class="disclaimer">
-      <strong>Disclaimer:</strong>
-      This channel is for educational purposes only.
-      Trading involves market risk. Please consult your
-      financial advisor before making investment decisions.
-    </div>
-
-  </div>
-
+        // FINAL Facebook Pixel event tracking for Telegram join clicks
+        function trackLead() {
+            if (window.fbq) {
+                // Standard Lead Event
+                fbq('track', 'Lead', {
+                    content_name: 'Telegram Channel Join',
+                    content_category: 'Educational Community'
+                });
+                
+                // Subscribe Event with value (custom for monetization tracking)
+                fbq('track', 'Subscribe', {
+                    value: 1.00,
+                    currency: 'INR',
+                    predicted_ltv: 0.00
+                });
+                
+                // Optional: Custom event for granular tracking
+                fbq('trackCustom', 'TelegramJoinClick', {
+                    channel: 'Deepak Wadhwa Official'
+                });
+            }
+        }
+    </script>
 </body>
 </html>
